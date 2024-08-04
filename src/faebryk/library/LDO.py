@@ -35,7 +35,6 @@ class LDO(Module):
             output_current = TBD[float]()
             psrr = TBD[float]()
             dropout_voltage = TBD[float]()
-            number_of_outputs = TBD[int]()
 
         return _PARAMs
 
@@ -59,7 +58,6 @@ class LDO(Module):
                     self.PARAMs.output_current,
                     self.PARAMs.psrr,
                     self.PARAMs.dropout_voltage,
-                    self.PARAMs.number_of_outputs,
                     self.PARAMs.max_input_voltage,
                 ),
                 lambda ps: "LDO "
@@ -69,8 +67,7 @@ class LDO(Module):
                         as_unit(ps[3], "A"),
                         as_unit(ps[4], "dB"),
                         as_unit(ps[5], "V"),
-                        f"{ps[6]} outputs",
-                        f"Vin max {as_unit(ps[7], 'V')}",
+                        f"Vin max {as_unit(ps[6], 'V')}",
                     ]
                 ),
             )
